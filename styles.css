@@ -1,0 +1,22 @@
+body {
+    background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 50%, #c8e6c9 100%);
+    min-height: 100vh;
+}
+
+.hover-menu:hover {
+    color: #134e4a !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.contact-box {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}

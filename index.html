@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaqueline Camila - Terapeuta TRG e Analista Comportamental</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <nav class="fixed w-full shadow-lg z-50" style="background: linear-gradient(135deg, #b2dfdb 0%, #80cbc4 100%)">
+        <div class="max-w-6xl mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <img src="https://cdn.abacus.ai/images/5739d25a-e882-4d98-9717-976fce79368e.png" alt="Terapeuta Jaqueline Camila" class="h-16 md:h-20">
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" style="color: #0f766e" class="hover-menu cursor-pointer transition font-semibold">Início</a>
+                    <a href="#sobre" style="color: #0f766e" class="hover-menu cursor-pointer transition font-semibold">Sobre</a>
+                    <a href="#servicos" style="color: #0f766e" class="hover-menu cursor-pointer transition font-semibold">Serviços</a>
+                    <a href="#depoimentos" style="color: #0f766e" class="hover-menu cursor-pointer transition font-semibold">Depoimentos</a>
+                    <a href="#contato" style="color: #0f766e" class="hover-menu cursor-pointer transition font-semibold">Contato</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button style="color: #0f766e" class="md:hidden" id="menuBtn">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="md:hidden mt-4 pb-4 space-y-3 hidden" id="mobileMenu">
+                <a href="#home" style="color: #0f766e" class="block hover-menu cursor-pointer font-semibold">Início</a>
+                <a href="#sobre" style="color: #0f766e" class="block hover-menu cursor-pointer font-semibold">Sobre</a>
+                <a href="#servicos" style="color: #0f766e" class="block hover-menu cursor-pointer font-semibold">Serviços</a>
+                <a href="#depoimentos" style="color: #0f766e" class="block hover-menu cursor-pointer font-semibold">Depoimentos</a>
+                <a href="#contato" style="color: #0f766e" class="block hover-menu cursor-pointer font-semibold">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-16 px-4" style="background: linear-gradient(135deg, #b2dfdb 0%, #80cbc4 100%)">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="flex-1 text-center md:text-left">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-teal-900 mb-6">
+                        Cuide da sua Saúde Mental
+                    </h1>
+                    <p class="text-lg md:text-xl text-teal-800 mb-8 leading-relaxed">
+                        Atendimento terapêutico humanizado e acolhedor, integrando fé e ciência para você encontrar equilíbrio, paz e propósito.
+                    </p>
+                    <a href="https://wa.me/5531982227168?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta." 
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="inline-block bg-yellow-600 text-teal-900 px-8 py-4 rounded-full text-lg font-semibold hover:bg-yellow-500 transition shadow-lg">
+                        <i class="fab fa-whatsapp mr-2"></i>
+                        Agende sua Consulta
+                    </a>
+                </div>
+                <div class="flex-1">
+                    <img src="https://cdn.abacus.ai/images/7f5d0d58-95e5-4cbd-9740-e671cb084395.png" alt="Jaqueline Camila - Terapeuta" class="rounded-lg shadow-2xl w-full object-cover" style="max-height: 500px">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="py-16 px-4 bg-white bg-opacity-70">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-teal-900 mb-12">Quem sou eu</h2>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="flex-1">
+                    <img src="https://cdn.abacus.ai/images/92a1bf1a-a8aa-4c10-872b-6e1cf0140db1.png" alt="Jaqueline Camila" class="rounded-lg shadow-xl w-full object-cover object-top" style="max-height: 700px">
+                </div>
+                <div class="flex-1">
+                    <h3 class="text-2xl font-semibold text-yellow-700 mb-4">Jaqueline Camila — Terapeuta TRG e Analista Comportamental</h3>
+                    <p class="text-gray-700 mb-4 leading-relaxed">
+                        Sou Jaqueline Camila, casada com Erik Henrique, mãe da Júlia Camila e do Miguel Henrique. Cristã e pregadora da Palavra, capelã, terapeuta TRG e analista comportamental. Casada há 15 anos e pregadora há 13 anos. Tornei-me terapeuta após atravessar depressão e ansiedade. Minha missão é integrar acolhimento humano, fé e técnicas baseadas em evidências para que você viva com clareza, paz e propósito.
+                    </p>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        Eu já estive no escuro: depressão, ansiedade e crises de pânico. Precisei de psiquiatra, terapia, ansiolítico e antidepressivo. Foi nesse vale que descobri caminhos de reprocessamento, fé e ciência integrados. Hoje, estendo a mão para caminhar com você rumo à restauração.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-start gap-3">
+                            <div class="text-yellow-600 text-2xl">
+                                <i class="fas fa-praying-hands"></i>
+                            </div>
+                            <span class="text-gray-700 font-medium">Fé e ciência em diálogo</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="text-yellow-600 text-2xl">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                            <span class="text-gray-700 font-medium">Acolhimento sem julgamentos</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="text-yellow-600 text-2xl">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <span class="text-gray-700 font-medium">Ética, sigilo e simplicidade prática</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="text-yellow-600 text-2xl">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <span class="text-gray-700 font-medium">Saúde integral do corpo, alma e espírito</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços Section -->
+    <section id="servicos" class="py-16 px-4 bg-white bg-opacity-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-teal-900 mb-12">Serviços</h2>
+            
+            <!-- Carousel Container -->
+            <div class="relative">
+                <!-- Carousel Wrapper -->
+                <div class="overflow-hidden">
+                    <div id="carouselTrack" class="flex transition-transform duration-500 ease-in-out">
+                        <!-- Slide 1 -->
+                        <div class="carousel-slide min-w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-2">
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition border-t-4 border-yellow-600">
+                                <div class="text-4xl text-teal-700 mb-4">
+                                    <i class="fas fa-user-check"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-teal-900 mb-3">Atendimento Presencial</h3>
+                                <p class="text-gray-600">Sessões presenciais em ambiente acolhedor e seguro</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition border-t-4 border-yellow-600">
+                                <div class="text-4xl text-teal-700 mb-4">
+                                    <i class="fas fa-video"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-teal-900 mb-3">Atendimento Online</h3>
+                                <p class="text-gray-600">Sessões por videochamada com total privacidade</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition border-t-4 border-yellow-600">
+                                <div class="text-4xl text-teal-700 mb-4">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-teal-900 mb-3">Atendimento de Casais</h3>
+                                <p class="text-gray-600">Fortalecimento de vínculos e resolução de conflitos</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition border-t-4 border-yellow-600">
+                                <div class="text-4xl text-teal-700 mb-4">
+                                    <i class="fas fa-child"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-teal-900 mb-3">Atendimento Infantil</h3>
+                                <p class="text-gray-600">Acompanhamento especializado para crianças e adolescentes</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition border-t-4 border-yellow-600">
+                                <div class="text-4xl text-teal-700 mb-4">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-teal-900 mb-3">Ansiedade</h3>
+                                <p class="text-gray-600">Tratamento especializado para transtornos de ansiedade</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition border-t-4 border-yellow-600">
+                                <div class="text-4xl text-teal-700 mb-4">
+                                    <i class="fas fa-microphone"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-teal-900 mb-3">Palestras</h3>
+                                <p class="text-gray-600">Palestras motivacionais e educativas sobre saúde mental</p>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="carousel-slide min-w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-2">
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition border-t-4 border-yellow-600">
+                                <div class="text-4xl text-teal-700 mb-4">
+                                    <i class="fas fa-cloud-rain"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-teal-900 mb-3">Depressão</h3>
+                                <p class="text-gray-600">Acompanhamento terapêutico para superar a depressão</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition border-t-4 border-yellow-600">
+                                <div class="text-4xl text-teal-700 mb-4">
+                                    <i class="fas fa-heart-broken"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-teal-900 mb-3">Traumas</h3>
+                                <p class="text-gray-600">Reprocessamento e cura de traumas emocionais</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition border-t-4 border-yellow-600">
+                                <div class="text-4xl text-teal-700 mb-4">
+                                    <i class="fas fa-moon"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-teal-900 mb-3">Insônia</h3>
+                                <p class="text-gray-600">Técnicas para melhorar a qualidade do sono</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition border-t-4 border-yellow-600">
+                                <div class="text-4xl text-teal-700 mb-4">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-teal-900 mb-3">Fobias</h3>
+                                <p class="text-gray-600">Tratamento de medos e fobias específicas</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition border-t-4 border-yellow-600">
+                                <div class="text-4xl text-teal-700 mb-4">
+                                    <i class="fas fa-ghost"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-teal-900 mb-3">Medo</h3>
+                                <p class="text-gray-600">Superação de medos e inseguranças</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition border-t-4 border-yellow-600">
+                                <div class="text-4xl text-teal-700 mb-4">
+                                    <i class="fas fa-heartbeat"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-teal-900 mb-3">Síndrome do Pânico</h3>
+                                <p class="text-gray-600">Controle e tratamento de crises de pânico</p>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="carousel-slide min-w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-2">
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition border-t-4 border-yellow-600">
+                                <div class="text-4xl text-teal-700 mb-4">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-teal-900 mb-3">Insegurança</h3>
+                                <p class="text-gray-600">Desenvolvimento de autoconfiança e segurança</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition border-t-4 border-yellow-600">
+                                <div class="text-4xl text-teal-700 mb-4">
+                                    <i class="fas fa-sad-tear"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-teal-900 mb-3">Angústia</h3>
+                                <p class="text-gray-600">Alívio e compreensão da angústia emocional</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition border-t-4 border-yellow-600">
+                                <div class="text-4xl text-teal-700 mb-4">
+                                    <i class="fas fa-link"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-teal-900 mb-3">Dependência Emocional</h3>
+                                <p class="text-gray-600">Construção de autonomia e independência emocional</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <button id="prevBtn" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-yellow-600 text-white p-3 rounded-full shadow-lg hover:bg-yellow-500 transition z-10">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="nextBtn" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-yellow-600 text-white p-3 rounded-full shadow-lg hover:bg-yellow-500 transition z-10">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <!-- Dots Indicator -->
+                <div class="flex justify-center gap-2 mt-8">
+                    <button class="carousel-dot w-3 h-3 rounded-full bg-yellow-600 transition" data-slide="0"></button>
+                    <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 transition" data-slide="1"></button>
+                    <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 transition" data-slide="2"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos Section -->
+    <section id="depoimentos" class="py-16 px-4 bg-white bg-opacity-70">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-teal-900 mb-12">Depoimentos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-yellow-600">
+                    <div class="text-yellow-600 mb-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"A terapia mudou minha vida! Encontrei equilíbrio e aprendi a lidar com minha ansiedade."</p>
+                    <p class="font-semibold text-teal-800">- Maria Silva</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-yellow-600">
+                    <div class="text-yellow-600 mb-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"Profissional extremamente competente e acolhedora. Recomendo muito!"</p>
+                    <p class="font-semibold text-teal-800">- João Santos</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-yellow-600">
+                    <div class="text-yellow-600 mb-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"Ambiente seguro e confortável. Me sinto à vontade para compartilhar tudo."</p>
+                    <p class="font-semibold text-teal-800">- Ana Costa</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section id="contato" class="py-16 px-4 bg-gradient-to-br from-teal-800 to-teal-900 text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-yellow-100">Entre em Contato</h2>
+            <p class="text-lg mb-8 text-yellow-50">Agende sua consulta e dê o primeiro passo para uma vida mais equilibrada</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <a href="https://wa.me/5531982227168?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta." 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="contact-box bg-teal-700 p-6 rounded-lg border-2 border-yellow-600">
+                    <i class="fab fa-whatsapp text-3xl mb-3 text-yellow-400"></i>
+                    <p class="font-semibold text-yellow-100">WhatsApp</p>
+                    <p class="text-yellow-50">(31) 98222-7168</p>
+                </a>
+                <a href="https://www.instagram.com/jaquelinecamilaofc" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="contact-box bg-teal-700 p-6 rounded-lg border-2 border-yellow-600">
+                    <i class="fab fa-instagram text-3xl mb-3 text-yellow-400"></i>
+                    <p class="font-semibold text-yellow-100">Instagram</p>
+                    <p class="text-yellow-50">@jaquelinecamilaofc</p>
+                </a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Rua+Professor+Osvaldo+Franco+90+Centro+Betim+MG" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="contact-box bg-teal-700 p-6 rounded-lg border-2 border-yellow-600">
+                    <i class="fas fa-map-marker-alt text-3xl mb-3 text-yellow-400"></i>
+                    <p class="font-semibold text-yellow-100">Endereço</p>
+                    <p class="text-yellow-50">Rua Professor Osvaldo Franco, 90<br>Centro, Betim - MG</p>
+                </a>
+            </div>
+
+            <div class="flex justify-center gap-6 text-3xl">
+                <a href="https://www.instagram.com/jaquelinecamilaofc" target="_blank" rel="noopener noreferrer" class="text-yellow-400 hover:text-yellow-300 transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-yellow-400 hover:text-yellow-300 transition"><i class="fab fa-facebook"></i></a>
+                <a href="https://wa.me/5531982227168" target="_blank" rel="noopener noreferrer" class="text-yellow-400 hover:text-yellow-300 transition"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-teal-950 text-yellow-100 py-8 px-4 text-center">
+        <div class="mb-4">
+            <img src="https://cdn.abacus.ai/images/5739d25a-e882-4d98-9717-976fce79368e.png" alt="Terapeuta Jaqueline Camila" class="h-16 mx-auto mb-3">
+        </div>
+        <p>&copy; 2025 Terapeuta Jaqueline Camila. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
