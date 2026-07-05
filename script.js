@@ -1,47 +1,21 @@
-// JavaScript - Site Jaqueline Camila
-
-// Mobile menu toggle
-document.addEventListener('DOMContentLoaded', function() {
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    if (menuBtn) {
+// Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
-            const icon = menuBtn.querySelector('i');
-            if (mobileMenu.classList.contains('hidden')) {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            } else {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            }
         });
-    }
 
-    // Close mobile menu when clicking on a link
-    const mobileLinks = document.querySelectorAll('#mobileMenu a');
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-            const icon = menuBtn.querySelector('i');
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-        });
-    });
+        // Carousel
+        const track = document.getElementById('carouselTrack');
+        const slides = document.querySelectorAll('.carousel-slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const dots = document.querySelectorAll('.carousel-dot');
+        let currentSlide = 0;
+        const totalSlides = slides.length;
 
-    // Carousel functionality
-    const carouselTrack = document.getElementById('carouselTrack');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const dots = document.querySelectorAll('.carousel-dot');
-    let currentSlide = 0;
-    const totalSlides = 4;
-
-    function updateCarousel() {
-        if (carouselTrack) {
-            carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
-            
+        function updateCarousel() {
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
             dots.forEach((dot, index) => {
                 if (index === currentSlide) {
                     dot.classList.remove('bg-gray-300');
@@ -52,56 +26,70 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         }
-    }
 
-    if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            updateCarousel();
-        });
-    }
-
-    if (prevBtn) {
         prevBtn.addEventListener('click', () => {
             currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
             updateCarousel();
         });
-    }
 
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            currentSlide = index;
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % totalSlides;
             updateCarousel();
         });
-    });
 
-    // Auto-play carousel
-    setInterval(() => {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        updateCarousel();
-    }, 10000);
-
-    // Toggle transtorno details - VERSÃO SIMPLIFICADA
-    const transtornoCards = document.querySelectorAll('.transtorno-card');
-    
-    transtornoCards.forEach(card => {
-        card.addEventListener('click', function(e) {
-            e.preventDefault();
-            const details = this.querySelector('.transtorno-details');
-            
-            // Verificar se está aberto ou fechado
-            if (details.style.maxHeight && details.style.maxHeight !== '0px') {
-                details.style.maxHeight = '0px';
-            } else {
-                // Fechar todos os outros
-                transtornoCards.forEach(otherCard => {
-                    const otherDetails = otherCard.querySelector('.transtorno-details');
-                    otherDetails.style.maxHeight = '0px';
-                });
-                
-                // Abrir o clicado
-                details.style.maxHeight = '500px';
-            }
+        dots.forEach((dot) => {
+            dot.addEventListener('click', (e) => {
+                currentSlide = parseInt(e.target.dataset.slide);
+                updateCarousel();
+            });
         });
-    });
-});
+
+        // Auto-advance carousel
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }, 5000);
+
+        // Transtorno cards — MODAL balão
+        const modalOverlay = document.getElementById('modalOverlay');
+        const modalClose = document.getElementById('modalClose');
+        const modalTitulo = document.getElementById('modalTitulo');
+        const modalDesc = document.getElementById('modalDesc');
+        const modalDetalhes = document.getElementById('modalDetalhes');
+        const modalIcon = document.getElementById('modalIcon');
+
+        document.querySelectorAll('.transtorno-card').forEach(card => {
+            card.addEventListener('click', () => {
+                modalTitulo.textContent = card.dataset.titulo;
+                modalDesc.textContent = card.dataset.desc;
+                modalDetalhes.textContent = card.dataset.detalhes;
+                modalIcon.className = (card.dataset.icon || 'fas fa-info-circle') + ' text-2xl';
+                modalOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        function closeModal() {
+            modalOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        modalClose.addEventListener('click', closeModal);
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) closeModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+// Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
