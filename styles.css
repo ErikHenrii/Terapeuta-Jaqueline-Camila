@@ -404,8 +404,8 @@
             background: linear-gradient(135deg, rgba(224,242,241,0.8) 0%, rgba(178,223,219,0.5) 100%);
         }
 
-        /* Container do Disqus — squircle + glass */
-        .disqus-container {
+        /* Container do Trustindex — squircle + glass */
+        .trustindex-container {
             border-radius: 1.8rem;
             background: rgba(255, 255, 255, 0.35);
             backdrop-filter: blur(14px);
