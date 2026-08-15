@@ -1,0 +1,439 @@
+/* ---------- BASE ---------- */
+        :root {
+            --neu-light: rgba(255, 255, 255, 0.9);
+            --neu-dark: rgba(15, 118, 110, 0.12);
+            --glass-bg: rgba(255, 255, 255, 0.15);
+            --glass-border: rgba(255, 255, 255, 0.25);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        /* ---------- SQUIRCLE ---------- */
+        /* Super-elipse: entre o quadrado e o círculo.
+           Aproximação via border-radius generoso com proporção 36%. */
+        .squircle       { border-radius: 1.4rem; }
+        .squircle-sm    { border-radius: 0.9rem; }
+        .squircle-lg    { border-radius: 2rem; }
+        .squircle-icon  { border-radius: 30% / 30%; }
+        .squircle-full  { border-radius: 36% / 36%; }
+
+        /* ---------- NEUMORFISMO ---------- */
+        .neumorphic {
+            background: #e0f2f1;
+            box-shadow:
+                -6px -6px 14px rgba(255,255,255,0.75),
+                 6px  6px 14px rgba(15,118,110,0.12);
+            border: none;
+        }
+        .neumorphic-raised {
+            background: #e0f2f1;
+            box-shadow:
+                -8px -8px 20px rgba(255,255,255,0.8),
+                 8px  8px 20px rgba(15,118,110,0.15);
+        }
+        .neumorphic-inset {
+            background: #e0f2f1;
+            box-shadow:
+                inset -4px -4px 10px rgba(255,255,255,0.7),
+                inset  4px  4px 10px rgba(15,118,110,0.1);
+        }
+        .neumorphic-dark {
+            background: rgba(15,76,70,0.6);
+            box-shadow:
+                -6px -6px 14px rgba(255,255,255,0.04),
+                 6px  6px 14px rgba(0,0,0,0.35);
+        }
+        .neumorphic-hover {
+            transition: box-shadow 0.35s ease, transform 0.35s ease;
+        }
+        .neumorphic-hover:hover {
+            box-shadow:
+                -10px -10px 24px rgba(255,255,255,0.85),
+                 10px  10px 24px rgba(15,118,110,0.18);
+            transform: translateY(-3px);
+        }
+
+        /* ---------- GLASSMORPHISM ---------- */
+        .glass {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255,255,255,0.25);
+            box-shadow: 0 8px 32px rgba(15,118,110,0.12), inset 0 1px 0 rgba(255,255,255,0.2);
+        }
+        .glass-dark {
+            background: rgba(13,60,57,0.45);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.08);
+        }
+        .glass-nav {
+            background: rgba(77, 182, 172, 0.82);
+            backdrop-filter: blur(18px) saturate(1.4);
+            -webkit-backdrop-filter: blur(18px) saturate(1.4);
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 4px 20px rgba(15,118,110,0.1), inset 0 1px 0 rgba(255,255,255,0.3);
+        }
+
+        /* ---------- COMBINAÇÕES ---------- */
+
+        /* Botão principal — squircle + glass + neumorphic */
+        .btn-squircle-glass {
+            border-radius: 1.4rem;
+            background: rgba(202,138,4,0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: -6px -6px 16px rgba(255,255,255,0.25), 6px 6px 16px rgba(120,53,15,0.3);
+            color: #0f766e;
+            transition: all 0.35s ease;
+        }
+        .btn-squircle-glass:hover {
+            box-shadow: -8px -8px 22px rgba(255,255,255,0.3), 8px 8px 22px rgba(120,53,15,0.35);
+            transform: translateY(-2px);
+            background: rgba(217,119,6,0.9);
+        }
+
+        /* Cards de serviço — squircle + glass */
+        .card-squircle-glass {
+            border-radius: 1.4rem;
+            background: rgba(255,255,255,0.25);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255,255,255,0.3);
+            box-shadow: -6px -6px 16px rgba(255,255,255,0.6), 6px 6px 16px rgba(15,118,110,0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .card-squircle-glass::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, rgba(202,138,4,0.8), transparent);
+            border-radius: 1.4rem 1.4rem 0 0;
+        }
+        .card-squircle-glass:hover {
+            box-shadow: -10px -10px 24px rgba(255,255,255,0.7), 10px 10px 24px rgba(15,118,110,0.15);
+            transform: translateY(-4px);
+        }
+
+        /* Cards de transtornos — squircle + neumorphic + glass */
+        .card-transtorno {
+            border-radius: 1.4rem;
+            background: rgba(255,255,255,0.28);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-left: 4px solid rgba(202,138,4,0.8);
+            box-shadow: -5px -5px 14px rgba(255,255,255,0.6), 5px 5px 14px rgba(15,118,110,0.1);
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+        .card-transtorno:hover {
+            box-shadow: -8px -8px 20px rgba(255,255,255,0.7), 8px 8px 20px rgba(15,118,110,0.15);
+            transform: translateY(-3px);
+        }
+
+        /* Ícones — squircle + neumorphic inset */
+        .icon-squircle-neu {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 3.5rem; height: 3.5rem;
+            border-radius: 30% / 30%;
+            background: #e0f2f1;
+            box-shadow:
+                inset -3px -3px 8px rgba(255,255,255,0.7),
+                inset  3px  3px 8px rgba(15,118,110,0.1),
+                -2px -2px 6px rgba(255,255,255,0.5),
+                 2px  2px 6px rgba(15,118,110,0.08);
+        }
+        .icon-squircle-neu-sm {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 2.5rem; height: 2.5rem;
+            border-radius: 30% / 30%;
+            background: #e0f2f1;
+            box-shadow: inset -2px -2px 6px rgba(255,255,255,0.7), inset 2px 2px 6px rgba(15,118,110,0.1);
+        }
+
+        /* Ícones em fundo escuro — glass + squircle */
+        .icon-glass-dark {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 3.5rem; height: 3.5rem;
+            border-radius: 30% / 30%;
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.12);
+            box-shadow: -4px -4px 10px rgba(255,255,255,0.03), 4px 4px 10px rgba(0,0,0,0.3);
+        }
+
+        /* Botões de carousel — squircle + glass */
+        .carousel-btn {
+            border-radius: 36% / 36%;
+            background: rgba(202,138,4,0.7);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: -4px -4px 10px rgba(255,255,255,0.3), 4px 4px 10px rgba(120,53,15,0.25);
+            transition: all 0.3s ease;
+        }
+        .carousel-btn:hover {
+            background: rgba(217,119,6,0.8);
+            box-shadow: -6px -6px 14px rgba(255,255,255,0.35), 6px 6px 14px rgba(120,53,15,0.3);
+            transform: scale(1.08);
+        }
+
+        /* Dots do carousel — squircle */
+        .carousel-dot-squircle {
+            border-radius: 36% / 36% !important;
+            transition: all 0.3s ease;
+        }
+
+        /* Boxes de contato — squircle + glass dark */
+        .contact-glass {
+            border-radius: 1.4rem;
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255,255,255,0.15);
+            box-shadow: -6px -6px 16px rgba(255,255,255,0.03), 6px 6px 16px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.1);
+            transition: all 0.4s ease;
+        }
+        .contact-glass:hover {
+            background: rgba(255,255,255,0.12);
+            box-shadow: -8px -8px 22px rgba(255,255,255,0.04), 8px 8px 22px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.15);
+            transform: translateY(-4px);
+        }
+
+        /* Imagens — squircle + sombra neumorphic */
+        .img-squircle-neu {
+            border-radius: 1.4rem;
+            box-shadow: -8px -8px 20px rgba(255,255,255,0.4), 8px 8px 20px rgba(15,118,110,0.15);
+        }
+
+        /* Links de menu hover — squircle + neumorphic inset */
+        .hover-menu {
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 0.9rem;
+        }
+        .hover-menu:hover {
+            background: rgba(255,255,255,0.25);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            box-shadow: inset -2px -2px 6px rgba(255,255,255,0.4), inset 2px 2px 6px rgba(15,118,110,0.1);
+        }
+
+        /* Footer glass */
+        .footer-glass {
+            background: rgba(13,60,57,0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        /* Section com fundo neumorphic */
+        .section-neu-bg { background: #e0f2f1; }
+
+        /* Section Sobre — mais clara */
+        .section-sobre-bg { background: #f0fdfa; }
+
+        /* Ícones sociais — squircle + glass dark */
+        .social-icon {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 3rem; height: 3rem;
+            border-radius: 30% / 30%;
+            background: rgba(255,255,255,0.06);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: -3px -3px 8px rgba(255,255,255,0.02), 3px 3px 8px rgba(0,0,0,0.25);
+            transition: all 0.35s ease;
+        }
+        .social-icon:hover {
+            background: rgba(255,255,255,0.1);
+            box-shadow: -5px -5px 12px rgba(255,255,255,0.03), 5px 5px 12px rgba(0,0,0,0.3);
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        /* Logo nav — squircle + neumorphic */
+        .logo-squircle {
+            border-radius: 30% / 30%;
+            padding: 6px;
+            background: rgba(255,255,255,0.3);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            box-shadow: -3px -3px 8px rgba(255,255,255,0.5), 3px 3px 8px rgba(15,118,110,0.1);
+        }
+        .logo-squircle img { border-radius: 22% / 22%; }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #e0f2f1; }
+        ::-webkit-scrollbar-thumb { background: rgba(15,118,110,0.3); border-radius: 30% / 30%; }
+
+        /* ---------- MODAL TRANSTORNOS ---------- */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(13, 60, 57, 0.5);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.35s ease, visibility 0.35s ease;
+            padding: 1rem;
+        }
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Balão modal — squircle + glass + neumorphic */
+        .modal-balao {
+            background: rgba(255, 255, 255, 0.55);
+            backdrop-filter: blur(20px) saturate(1.3);
+            -webkit-backdrop-filter: blur(20px) saturate(1.3);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 1.8rem;
+            box-shadow:
+                -12px -12px 32px rgba(255, 255, 255, 0.5),
+                 12px  12px 32px rgba(15, 118, 110, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            max-width: 32rem;
+            width: 100%;
+            padding: 2rem;
+            position: relative;
+            transform: scale(0.85) translateY(20px);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .modal-overlay.active .modal-balao {
+            transform: scale(1) translateY(0);
+        }
+
+        /* Seta do balão (ponta inferior) */
+        .modal-balao::after {
+            content: '';
+            position: absolute;
+            bottom: -1.2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2.5rem;
+            height: 2.5rem;
+            background: rgba(255, 255, 255, 0.55);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-right: 1px solid rgba(255, 255, 255, 0.4);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+            transform: translateX(-50%) rotate(45deg);
+            z-index: -1;
+        }
+
+        /* Botão fechar — squircle + neu */
+        .modal-close {
+            position: absolute;
+            top: 0.8rem;
+            right: 0.8rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 30% / 30%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow:
+                -3px -3px 8px rgba(255, 255, 255, 0.6),
+                 3px  3px 8px rgba(15, 118, 110, 0.1);
+            color: #0f766e;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.45);
+            box-shadow:
+                -4px -4px 10px rgba(255, 255, 255, 0.7),
+                 4px  4px 10px rgba(15, 118, 110, 0.15);
+            transform: rotate(90deg);
+        }
+
+        /* CTA dentro do modal */
+        .modal-cta {
+            display: inline-block;
+            border-radius: 1.2rem;
+            background: rgba(202, 138, 4, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: -4px -4px 12px rgba(255,255,255,0.25), 4px 4px 12px rgba(120,53,15,0.25);
+            color: #0f766e;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .modal-cta:hover {
+            background: rgba(217, 119, 6, 0.9);
+            transform: translateY(-2px);
+            box-shadow: -6px -6px 16px rgba(255,255,255,0.3), 6px 6px 16px rgba(120,53,15,0.3);
+        }
+
+        /* Animação de entrada dos cards */
+        .card-transtorno {
+            animation: cardFadeIn 0.5s ease forwards;
+            opacity: 0;
+        }
+        @keyframes cardFadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+    
+        /* ---------- SEÇÃO DEPOIMENTOS ---------- */
+        .section-depoimentos-bg {
+            background: linear-gradient(135deg, rgba(224,242,241,0.8) 0%, rgba(178,223,219,0.5) 100%);
+        }
+
+        /* Container do Trustindex — squircle + glass */
+        .trustindex-container {
+            border-radius: 1.8rem;
+            background: rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow:
+                -8px -8px 20px rgba(255, 255, 255, 0.6),
+                 8px  8px 20px rgba(15, 118, 110, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            padding: 2rem;
+            overflow: hidden;
+        }
+
+        /* Badge decorativo no topo do container */
+        .depoimento-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.2rem;
+            border-radius: 30% / 30%;
+            background: rgba(202, 138, 4, 0.15);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border: 1px solid rgba(202, 138, 4, 0.3);
+            box-shadow:
+                -3px -3px 8px rgba(255, 255, 255, 0.5),
+                 3px  3px 8px rgba(15, 118, 110, 0.08);
+            color: #b45309;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
